@@ -10,7 +10,7 @@ class TestMain(unittest.TestCase):
         self.stack.push('data1')
         self.stack.push('data2')
 
-    def test_push(self):
+    def test_push_pop(self):
         self.assertEqual(self.stack.top.data, 'data2')
         self.assertEqual(self.stack.top.next_node.data, 'data1')
         self.assertEqual(self.stack.top.next_node.next_node, None)
@@ -18,3 +18,5 @@ class TestMain(unittest.TestCase):
         self.assertEqual(self.n1.next_node, None)
         self.assertEqual(self.n2.data, 2)
         self.assertEqual(self.n2.next_node, self.n1)
+        self.stack.pop()
+        self.assertEqual(self.stack.top.data, 'data1')
