@@ -35,4 +35,3 @@ class TestCustomqueue(unittest.TestCase):
         self.assertEqual(self.queue.head.next_node.data, 'data2')
         self.assertEqual(self.queue.tail.data, 'data3')
         self.assertEqual(self.queue.tail.next_node, None)
-
