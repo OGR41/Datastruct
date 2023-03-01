@@ -1,5 +1,4 @@
 
-
 class Node:
     def __init__(self, data, next_node=None):
         self.data = data
@@ -21,23 +20,19 @@ class Stack:
         return remove.data
 
 
-def main():
-    stack = Stack()
-    stack.push('data1')
-    data = stack.pop()
-    print(stack.top)
-
-    print(data)
-
-    stack = Stack()
-    stack.push('data1')
-    stack.push('data2')
-    data = stack.pop()
-
-    print(stack.top.data)
-
-    print(data)
-
-
-if __name__ == '__main__':
-    main()
+# def main():
+#     stack = Stack()
+#     stack.push('data1')
+#     data = stack.pop()
+#     print(stack.top)
+#     print(data)
+#     stack = Stack()
+#     stack.push('data1')
+#     stack.push('data2')
+#     data = stack.pop()
+#     print(stack.top.data)
+#     print(data)
+#
+#
+# if __name__ == '__main__':
+#     main()
