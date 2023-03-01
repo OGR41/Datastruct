@@ -1,5 +1,6 @@
 import unittest
 from main import Node, Stack
+from custom_queue import Queue
 
 
 class TestMain(unittest.TestCase):
@@ -20,3 +21,18 @@ class TestMain(unittest.TestCase):
         self.assertEqual(self.n2.next_node, self.n1)
         self.stack.pop()
         self.assertEqual(self.stack.top.data, 'data1')
+
+
+class TestCustomqueue(unittest.TestCase):
+    def setUp(self):
+        self.queue = Queue()
+        self.queue.enqueue('data1')
+        self.queue.enqueue('data2')
+        self.queue.enqueue('data3')
+
+    def test_enqueue(self):
+        self.assertEqual(self.queue.head.data, 'data1')
+        self.assertEqual(self.queue.head.next_node.data, 'data2')
+        self.assertEqual(self.queue.tail.data, 'data3')
+        self.assertEqual(self.queue.tail.next_node, None)
+
