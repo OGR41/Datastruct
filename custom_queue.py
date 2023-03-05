@@ -13,20 +13,27 @@ class Queue:
 
     def enqueue(self, data=None):
         if self.head is None:
-            new_node = Node(data, self.tail)
-            self.head = new_node
+            self.head = Node(data, self.tail)
         self.head = Node(self.head.data, self.tail)
-        new_node = Node(data)
-        self.tail = new_node
+        self.tail = Node(data)
+
+    def dequeue(self):
+        if self.head is None:
+            return None
+        dequeue_element = self.head
+        self.head = self.head.next_node
+        return dequeue_element.data
 
 
-queue = Queue()
-queue.enqueue('data1')
-queue.enqueue('data2')
-queue.enqueue('data3')
+def main():
+    queue = Queue()
+    queue.enqueue('data1')
+    queue.enqueue('data2')
+    queue.enqueue('data3')
+    print(queue.dequeue())
+    print(queue.dequeue())
+    print(queue.dequeue())
 
-print(queue.head.data)
-print(queue.head.next_node.data)
-print(queue.tail.data)
-print(queue.tail.next_node)
-print(queue.tail.next_node.data)
+
+if __name__ == '__main__':
+    main()

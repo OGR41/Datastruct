@@ -23,7 +23,7 @@ class TestMain(unittest.TestCase):
         self.assertEqual(self.stack.top.data, 'data1')
 
 
-class TestCustomqueue(unittest.TestCase):
+class TestCustomQueue(unittest.TestCase):
     def setUp(self):
         self.queue = Queue()
         self.queue.enqueue('data1')
@@ -35,3 +35,11 @@ class TestCustomqueue(unittest.TestCase):
         self.assertEqual(self.queue.head.next_node.data, 'data2')
         self.assertEqual(self.queue.tail.data, 'data3')
         self.assertEqual(self.queue.tail.next_node, None)
+
+    def test_dequeue(self):
+        self.assertEqual(self.queue.head.next_node.data, 'data2')
+        self.queue.dequeue()
+        self.assertEqual(self.queue.head.data, 'data2')
+        self.assertEqual(self.queue.head.next_node, None)
+        self.queue.dequeue()
+        self.assertEqual(self.queue.head, None)

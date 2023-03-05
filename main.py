@@ -18,21 +18,3 @@ class Stack:
         remove = self.top
         self.top = self.top.next_node
         return remove.data
-
-
-# def main():
-#     stack = Stack()
-#     stack.push('data1')
-#     data = stack.pop()
-#     print(stack.top)
-#     print(data)
-#     stack = Stack()
-#     stack.push('data1')
-#     stack.push('data2')
-#     data = stack.pop()
-#     print(stack.top.data)
-#     print(data)
-#
-#
-# if __name__ == '__main__':
-#     main()
