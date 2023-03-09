@@ -23,17 +23,3 @@ class Queue:
         dequeue_element = self.head
         self.head = self.head.next_node
         return dequeue_element.data
-
-
-def main():
-    queue = Queue()
-    queue.enqueue('data1')
-    queue.enqueue('data2')
-    queue.enqueue('data3')
-    print(queue.dequeue())
-    print(queue.dequeue())
-    print(queue.dequeue())
-
-
-if __name__ == '__main__':
-    main()
